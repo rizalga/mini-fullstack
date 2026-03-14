@@ -238,7 +238,7 @@ Contoh request:
 ```json
 {
   "username": "admin",
-  "password": "admin123"
+  "password": "123"
 }
 ```
 
