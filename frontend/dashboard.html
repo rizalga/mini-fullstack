@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #f4f6f9;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      position: fixed;
+      padding: 20px;
+    }
+
+    .sidebar h4 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h4>My Dashboard</h4>
+    <a onclick="showDashboard()">Dashboard</a>
+    <a onclick="showProducts()">Products</a>
+
+    <button onclick="logout()" class="btn btn-danger w-100 mt-4">
+      Logout
+    </button>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h2>Product Management</h2>
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div id="dashboardSection">
+      <div class="row mb-4">
+        <div class="col-md-3">
+          <div class="card p-3 text-center">
+            <h6>Total Products</h6>
+            <h2 id="total">0</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-4 mb-4">
+        <h5>Product Price Chart</h5>
+        <canvas id="productChart"></canvas>
+      </div>
+    </div>
+
+    <!-- PRODUCT SECTION -->
+    <div id="productSection" style="display: none;">
+      <div class="card p-4 mb-4">
+        <h5>Add Product</h5>
+        <div class="row g-2">
+          <div class="col-md-5">
+            <input id="name" class="form-control" placeholder="Product Name">
+          </div>
+
+          <div class="col-md-5">
+            <input id="price" type="number" class="form-control" placeholder="Price">
+          </div>
+
+          <div class="col-md-2">
+            <button onclick="addProduct()" class="btn btn-primary w-100">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-4 mb-4" id="editSection" style="display:none;">
+        <h5>Edit Product</h5>
+        <input type="hidden" id="editId">
+
+        <div class="row g-2">
+          <div class="col-md-4">
+            <input id="editName" class="form-control" placeholder="Product Name">
+          </div>
+
+          <div class="col-md-4">
+            <input id="editPrice" type="number" class="form-control" placeholder="Price">
+          </div>
+
+          <div class="col-md-2">
+            <button onclick="updateProduct()" class="btn btn-success w-100">
+              Update
+            </button>
+          </div>
+
+          <div class="col-md-2">
+            <button onclick="cancelEdit()" class="btn btn-secondary w-100">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-4">
+        <h5>Product List</h5>
+        <table class="table table-hover mt-3">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

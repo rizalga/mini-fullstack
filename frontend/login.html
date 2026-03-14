@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f5f6fa;
+font-family:Arial;
+}
+
+.login-card{
+width:360px;
+padding:35px;
+border-radius:10px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.login-title{
+text-align:center;
+margin-bottom:25px;
+font-weight:bold;
+color:#333;
+}
+
+.form-control{
+border-radius:8px;
+padding:10px;
+}
+
+.btn-login{
+background:#667eea;
+border:none;
+border-radius:8px;
+padding:10px;
+font-weight:bold;
+}
+
+.btn-login:hover{
+background:#5563d6;
+}
+
+.footer-text{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+color:#999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+<h3 class="login-title">Login Dashboard</h3>
+
+<div class="mb-3">
+<input type="text" id="username" class="form-control" placeholder="Username">
+</div>
+
+<div class="mb-3">
+<input type="password" id="password" class="form-control" placeholder="Password">
+</div>
+
+<button onclick="login()" class="btn btn-login w-100">
+Login
+</button>
+
+<div class="footer-text">
+Fullstack Project
+</div>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

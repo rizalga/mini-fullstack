@@ -1,0 +1,53 @@
+body{
+background:#f4f6f9;
+font-family:Arial;
+margin:0;
+}
+
+.wrapper{
+display:flex;
+}
+
+.sidebar{
+width:220px;
+height:100vh;
+background:#1e272e;
+color:white;
+padding:20px;
+}
+
+.logo{
+margin-bottom:40px;
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+padding:12px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.sidebar li:hover{
+background:#485460;
+}
+
+.main{
+flex:1;
+padding:30px;
+}
+
+.topbar{
+margin-bottom:20px;
+}
+
+.card-stat{
+border-left:5px solid #0d6efd;
+}
+
+table{
+margin-top:10px;
+}
